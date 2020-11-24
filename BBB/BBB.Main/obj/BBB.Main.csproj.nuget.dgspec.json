@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\Desktop\\BBB\\BBB.Main\\BBB.Main.csproj": {}
+    "C:\\Users\\Admin\\Desktop\\BBB\\BBB\\BBB.Main\\BBB.Main.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\Desktop\\BBB\\BBB.Data\\BBB.Data.csproj": {
+    "C:\\Users\\Admin\\Desktop\\BBB\\BBB\\BBB.Data\\BBB.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\BBB\\BBB.Data\\BBB.Data.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\BBB\\BBB\\BBB.Data\\BBB.Data.csproj",
         "projectName": "BBB.Data",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\BBB\\BBB.Data\\BBB.Data.csproj",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\BBB\\BBB\\BBB.Data\\BBB.Data.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\BBB\\BBB.Data\\obj\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\BBB\\BBB\\BBB.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -78,14 +78,14 @@
         }
       }
     },
-    "C:\\Users\\Admin\\Desktop\\BBB\\BBB.Main\\BBB.Main.csproj": {
+    "C:\\Users\\Admin\\Desktop\\BBB\\BBB\\BBB.Main\\BBB.Main.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\BBB\\BBB.Main\\BBB.Main.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\BBB\\BBB\\BBB.Main\\BBB.Main.csproj",
         "projectName": "BBB.Main",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\BBB\\BBB.Main\\BBB.Main.csproj",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\BBB\\BBB\\BBB.Main\\BBB.Main.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\BBB\\BBB.Main\\obj\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\BBB\\BBB\\BBB.Main\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -101,8 +101,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Admin\\Desktop\\BBB\\BBB.Data\\BBB.Data.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Desktop\\BBB\\BBB.Data\\BBB.Data.csproj"
+              "C:\\Users\\Admin\\Desktop\\BBB\\BBB\\BBB.Data\\BBB.Data.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\BBB\\BBB\\BBB.Data\\BBB.Data.csproj"
               }
             }
           }
