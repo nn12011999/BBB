@@ -8,21 +8,20 @@ namespace BBB.Data.Entities
 {
     public class Post
     {
+        public Post()
+        {
+            this.Tags = new HashSet<Tag>();
+        }
         [Key]
         public int Id { get; set; }
-
         [ForeignKey("UserId")]
-        public  int UserId { get; set; }
         public virtual User User { get; set; }
-
-
         [ForeignKey("CategoryId")]
-        public int CategoryId { get; set; }
         public virtual Category Category { get; set; }
         public string title { get; set; }
         public string context { get; set; }
         public string Url { get; set; }
         public DateTime TimeStamp { get; set; }
-        public ICollection<PostTag> PostTags { get; set; }
+        public ICollection<Tag> Tags { get; set; }
     }
 }

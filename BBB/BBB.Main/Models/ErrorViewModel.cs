@@ -1,6 +1,4 @@
-using System;
-
-namespace BBB.Main.Models
+namespace BBB.Api.Models
 {
     public class ErrorViewModel
     {

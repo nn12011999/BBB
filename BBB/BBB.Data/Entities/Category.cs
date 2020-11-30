@@ -11,10 +11,9 @@ namespace BBB.Data.Entities
         [Key]
         public int Id { get; set; }
         public string Name { get; set; }
-
         [ForeignKey("ParentId")]
-        public string ParentId { get; set; }
         public virtual Category ParentCategory { get; set; }
-        public string slug { get; set; }
+        public int? ParentId { get; set; }
+        public string Slug { get; set; }
     }
 }

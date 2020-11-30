@@ -5799,19 +5799,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {}
+    "C:\\Users\\T520\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\BBB\\BBB\\BBB.Data\\BBB.Data.csproj",
+      "projectUniqueName": "C:\\Users\\T520\\Desktop\\BBB\\BBB\\BBB\\BBB.Data\\BBB.Data.csproj",
       "projectName": "BBB.Data",
-      "projectPath": "C:\\Users\\Admin\\Desktop\\BBB\\BBB\\BBB.Data\\BBB.Data.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\Desktop\\BBB\\BBB\\BBB.Data\\obj\\",
+      "projectPath": "C:\\Users\\T520\\Desktop\\BBB\\BBB\\BBB\\BBB.Data\\BBB.Data.csproj",
+      "packagesPath": "C:\\Users\\T520\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\T520\\Desktop\\BBB\\BBB\\BBB\\BBB.Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\T520\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5823,6 +5823,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -5834,6 +5835,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
@@ -5871,7 +5873,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
