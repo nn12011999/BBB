@@ -16,14 +16,14 @@ namespace BBB.Main.Repositories
             _context = context;
         }
 
-        public Tag FindById(int categoryId)
+        public Tag FindById(int tagId)
         {
-            return _context.Tags.Find(categoryId);
+            return _context.Tags.Find(tagId);
         }
 
-        public Tag FindByName(string categoryName)
+        public Tag FindByName(string tagName)
         {
-            return _context.Tags.Where(x => x.Name == categoryName).FirstOrDefault() ;
+            return _context.Tags.Where(x => x.Name == tagName).FirstOrDefault() ;
         }
 
         public IList<Tag> GetAllTag()

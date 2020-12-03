@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BBB.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201130165649_AddTable")]
+    [Migration("20201203165148_Add-Table")]
     partial class AddTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -78,6 +78,21 @@ namespace BBB.Data.Migrations
                     b.ToTable("Posts");
                 });
 
+            modelBuilder.Entity("BBB.Data.Entities.PostTag", b =>
+                {
+                    b.Property<int>("TagId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PostId")
+                        .HasColumnType("int");
+
+                    b.HasKey("TagId", "PostId");
+
+                    b.HasIndex("PostId");
+
+                    b.ToTable("PostTags");
+                });
+
             modelBuilder.Entity("BBB.Data.Entities.Tag", b =>
                 {
                     b.Property<int>("Id")
@@ -114,21 +129,6 @@ namespace BBB.Data.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("PostTag", b =>
-                {
-                    b.Property<int>("PostsId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TagsId")
-                        .HasColumnType("int");
-
-                    b.HasKey("PostsId", "TagsId");
-
-                    b.HasIndex("TagsId");
-
-                    b.ToTable("PostTag");
-                });
-
             modelBuilder.Entity("BBB.Data.Entities.Category", b =>
                 {
                     b.HasOne("BBB.Data.Entities.Category", "ParentCategory")
@@ -153,19 +153,33 @@ namespace BBB.Data.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("PostTag", b =>
+            modelBuilder.Entity("BBB.Data.Entities.PostTag", b =>
                 {
-                    b.HasOne("BBB.Data.Entities.Post", null)
-                        .WithMany()
-                        .HasForeignKey("PostsId")
+                    b.HasOne("BBB.Data.Entities.Post", "post")
+                        .WithMany("PostTags")
+                        .HasForeignKey("PostId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("BBB.Data.Entities.Tag", null)
-                        .WithMany()
-                        .HasForeignKey("TagsId")
+                    b.HasOne("BBB.Data.Entities.Tag", "tag")
+                        .WithMany("PostTags")
+                        .HasForeignKey("TagId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("post");
+
+                    b.Navigation("tag");
+                });
+
+            modelBuilder.Entity("BBB.Data.Entities.Post", b =>
+                {
+                    b.Navigation("PostTags");
+                });
+
+            modelBuilder.Entity("BBB.Data.Entities.Tag", b =>
+                {
+                    b.Navigation("PostTags");
                 });
 #pragma warning restore 612, 618
         }

@@ -16,9 +16,22 @@ namespace BBB.Data
         public DbSet<Post> Posts { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Tag> Tags { get; set; }
+        public DbSet<PostTag> PostTags { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<PostTag>().HasKey(sc => new { sc.TagId, sc.PostId });
+
+            modelBuilder.Entity<PostTag>()
+                .HasOne<Post>(sc => sc.post)
+                .WithMany(s => s.PostTags)
+                .HasForeignKey(sc => sc.PostId);
+
+
+            modelBuilder.Entity<PostTag>()
+                .HasOne<Tag>(sc => sc.tag)
+                .WithMany(s => s.PostTags)
+                .HasForeignKey(sc => sc.TagId);
         }
     }
 }

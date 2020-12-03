@@ -33,9 +33,11 @@ namespace BBB.Main
 
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<ITagRepository, TagRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
 
             services.AddScoped<ICategoryServices, CategoryServices>();
             services.AddScoped<ITagServices, TagServices>();
+            services.AddScoped<IUserServices, UserServices>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
