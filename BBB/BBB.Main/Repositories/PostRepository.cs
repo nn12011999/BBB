@@ -1,5 +1,6 @@
 ﻿using BBB.Data;
 using BBB.Data.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +29,12 @@ namespace BBB.Main.Repositories
 
         public IList<Post> GetAllPost()
         {
-            return _context.Posts.ToList();
+            var query = _context.Posts.Include(x=>x.Tags).ToList();
+            foreach (Post post in query)
+            {
+                post.Tags = null;
+            }
+            return query;
         }
     }
 }

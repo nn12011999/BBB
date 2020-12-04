@@ -4,9 +4,8 @@ using System.Text;
 
 namespace BBB.Data.DataModel.Request
 {
-    public class DeletePostTagRequest
+    public class DeletePostRequest
     {
         public int PostId { get; set; }
-        public int TagId { get; set; }
     }
 }
