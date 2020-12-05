@@ -5799,19 +5799,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\intern.nquachnguyen\\.nuget\\packages\\": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\intern.nquachnguyen\\Desktop\\BBB\\BBB\\BBB\\BBB.Data\\BBB.Data.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\BBB\\BBB\\BBB.Data\\BBB.Data.csproj",
       "projectName": "BBB.Data",
-      "projectPath": "C:\\Users\\intern.nquachnguyen\\Desktop\\BBB\\BBB\\BBB\\BBB.Data\\BBB.Data.csproj",
-      "packagesPath": "C:\\Users\\intern.nquachnguyen\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\intern.nquachnguyen\\Desktop\\BBB\\BBB\\BBB\\BBB.Data\\obj\\",
+      "projectPath": "C:\\Users\\Admin\\Desktop\\BBB\\BBB\\BBB.Data\\BBB.Data.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Admin\\Desktop\\BBB\\BBB\\BBB.Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\intern.nquachnguyen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

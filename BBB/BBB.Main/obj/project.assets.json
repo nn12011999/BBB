@@ -5780,19 +5780,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\intern.nquachnguyen\\.nuget\\packages\\": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\intern.nquachnguyen\\Desktop\\BBB\\BBB\\BBB\\BBB.Main\\BBB.Main.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\BBB\\BBB\\BBB.Main\\BBB.Main.csproj",
       "projectName": "BBB.Main",
-      "projectPath": "C:\\Users\\intern.nquachnguyen\\Desktop\\BBB\\BBB\\BBB\\BBB.Main\\BBB.Main.csproj",
-      "packagesPath": "C:\\Users\\intern.nquachnguyen\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\intern.nquachnguyen\\Desktop\\BBB\\BBB\\BBB\\BBB.Main\\obj\\",
+      "projectPath": "C:\\Users\\Admin\\Desktop\\BBB\\BBB\\BBB.Main\\BBB.Main.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Admin\\Desktop\\BBB\\BBB\\BBB.Main\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\intern.nquachnguyen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5805,8 +5805,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\intern.nquachnguyen\\Desktop\\BBB\\BBB\\BBB\\BBB.Data\\BBB.Data.csproj": {
-              "projectPath": "C:\\Users\\intern.nquachnguyen\\Desktop\\BBB\\BBB\\BBB\\BBB.Data\\BBB.Data.csproj"
+            "C:\\Users\\Admin\\Desktop\\BBB\\BBB\\BBB.Data\\BBB.Data.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\BBB\\BBB\\BBB.Data\\BBB.Data.csproj"
             }
           }
         }

@@ -30,6 +30,12 @@ namespace BBB.Main.Controllers
             return Ok(_tagRepository.GetAllTag());
         }
 
+        [HttpGet("hello")]
+        public IActionResult Hello()
+        {
+            return Ok("hello world");
+        }
+
         [HttpPost("add-tag")]
         public IActionResult AddTag([FromBody] AddTagRequest request)
         {
