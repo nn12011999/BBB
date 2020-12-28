@@ -57,7 +57,7 @@ namespace BBB.Main.Controllers
             var User = new User()
             {
                 UserName = request.UserName,
-                Role = request.Role
+                Password = request.Password
             };
 
             var response = _userServices.AddUser(User);

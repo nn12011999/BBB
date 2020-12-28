@@ -3,6 +3,7 @@ using BBB.Data.DataModel.Response;
 using BBB.Data.Entities;
 using BBB.Main.Repositories;
 using BBB.Main.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BBB.Main.Controllers
@@ -27,6 +28,7 @@ namespace BBB.Main.Controllers
         }
 
         [HttpPost("add-category")]
+        [Authorize(AuthenticationSchemes = "Bearer", Roles = RoleDefine.Admin)]
         public IActionResult AddCategory([FromBody] AddCategoryRequest request)
         {
             if (request == null)
@@ -73,6 +75,7 @@ namespace BBB.Main.Controllers
         }
 
         [HttpPost("delete-category")]
+        [Authorize(AuthenticationSchemes = "Bearer", Roles = RoleDefine.Admin)]
         public IActionResult DeleteCategory([FromBody] DeleteCategoryRequest request)
         {
             if (request == null)
@@ -112,6 +115,7 @@ namespace BBB.Main.Controllers
         }
 
         [HttpPost("update-category")]
+        [Authorize(AuthenticationSchemes = "Bearer", Roles = RoleDefine.Admin)]
         public IActionResult UpdateCategory([FromBody] UpdateCategoryRequest request)
         {
             if (request == null)
