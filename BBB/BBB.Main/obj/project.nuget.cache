@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "XBbypPL9izB0rCPKVi3XqfE4/enCc2smawFkKIT1sIRKE+IlB7OBWt7sd7GWAACXzIIsBcWj/1cjOsVOl3q2qA==",
+  "dgSpecHash": "1vHS42xWdz+XeMcarY5QSChOyG1bp6oIEJfSaRzzXJOc5GbWMleaZ/iErVfPN3RRMBEuXiMP9DYK4e7lR9sBHg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Admin\\Desktop\\BBB\\BBB\\BBB.Main\\BBB.Main.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.10\\microsoft.aspnetcore.authentication.jwtbearer.3.1.10.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",

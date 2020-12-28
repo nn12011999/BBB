@@ -3,6 +3,7 @@ using BBB.Data.DataModel.Response;
 using BBB.Data.Entities;
 using BBB.Main.Repositories;
 using BBB.Main.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -148,14 +149,33 @@ namespace BBB.Main.Controllers
             return Ok(response);
         }
 
-        [HttpGet("get-by-id")]
-        public IActionResult GetUserById([FromBody] int Id)
+        [HttpPost("get-by-id")]
+        //[Authorize(AuthenticationSchemes = "Bearer", Roles = RoleDefine.Admin)]
+        public IActionResult GetUserById([FromBody] RequestByUserId request)
         {
-            var response = _userRepository.FindById(Id);
+            var response = _userRepository.FindById(request.UserId);
             if (response == null)
             {
                 return BadRequest("User not found");
             }
+            return Ok(response);
+        }
+
+        [HttpPost("authentiate")]
+        public IActionResult Authenticate([FromBody] AuthenticateRequest request)
+        {
+            var query = _userRepository.FindByNameAndPassword(request.UserName, request.Password);
+            if(query == null)
+            {
+                return BadRequest("UserName or Password incorrect.Plz try again");
+            }
+            var response = new AuthenticateRessponse
+            {
+                Id = query.Id,
+                UserName = query.UserName,
+                Role = query.Role,
+                Token = _userServices.GenerateJSONWebToken(query)
+            };
             return Ok(response);
         }
     }

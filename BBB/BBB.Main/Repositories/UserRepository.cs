@@ -26,6 +26,11 @@ namespace BBB.Main.Repositories
             return _context.Users.Where(x => x.UserName == userName).FirstOrDefault() ;
         }
 
+        public User FindByNameAndPassword(string userName,string password)
+        {
+            return _context.Users.Where(x => x.UserName == userName && x.Password == password).FirstOrDefault();
+        }
+
         public IList<User> GetAllUser()
         {
             return _context.Users.ToList();

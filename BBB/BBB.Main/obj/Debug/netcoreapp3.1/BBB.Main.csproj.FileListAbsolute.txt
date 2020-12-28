@@ -137,8 +137,6 @@ C:\Users\Admin\Desktop\BBB\BBB\BBB.Main\bin\Debug\netcoreapp3.1\BBB.Data.pdb
 C:\Users\Admin\Desktop\BBB\BBB\BBB.Main\obj\Debug\netcoreapp3.1\BBB.Main.csprojAssemblyReference.cache
 C:\Users\Admin\Desktop\BBB\BBB\BBB.Main\obj\Debug\netcoreapp3.1\BBB.Main.AssemblyInfoInputs.cache
 C:\Users\Admin\Desktop\BBB\BBB\BBB.Main\obj\Debug\netcoreapp3.1\BBB.Main.AssemblyInfo.cs
-C:\Users\Admin\Desktop\BBB\BBB\BBB.Main\obj\Debug\netcoreapp3.1\BBB.Main.csproj.CoreCompileInputs.cache
-C:\Users\Admin\Desktop\BBB\BBB\BBB.Main\obj\Debug\netcoreapp3.1\BBB.Main.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Admin\Desktop\BBB\BBB\BBB.Main\obj\Debug\netcoreapp3.1\BBB.Main.RazorAssemblyInfo.cache
 C:\Users\Admin\Desktop\BBB\BBB\BBB.Main\obj\Debug\netcoreapp3.1\BBB.Main.RazorAssemblyInfo.cs
 C:\Users\Admin\Desktop\BBB\BBB\BBB.Main\obj\Debug\netcoreapp3.1\BBB.Main.TagHelpers.input.cache
@@ -322,3 +320,6 @@ C:\Users\T520\Desktop\BBB\BBB\BBB\BBB.Main\obj\Debug\netcoreapp3.1\Razor\Views\_
 C:\Users\T520\Desktop\BBB\BBB\BBB\BBB.Main\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
 C:\Users\T520\Desktop\BBB\BBB\BBB\BBB.Main\obj\Debug\netcoreapp3.1\BBB.Main.RazorTargetAssemblyInfo.cs
 C:\Users\T520\Desktop\BBB\BBB\BBB\BBB.Main\obj\Debug\netcoreapp3.1\BBB.Main.Views.pdb
+C:\Users\Admin\Desktop\BBB\BBB\BBB.Main\obj\Debug\netcoreapp3.1\BBB.Main.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\BBB\BBB\BBB.Main\obj\Debug\netcoreapp3.1\BBB.Main.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Admin\Desktop\BBB\BBB\BBB.Main\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll

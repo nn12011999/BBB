@@ -11,5 +11,6 @@ namespace BBB.Main.Services
         public string AddUser(User user);
         public string DeleteUser(User user);
         public string UpdateUser(User user);
+        public string GenerateJSONWebToken(User user);
     }
 }

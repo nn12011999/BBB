@@ -7,6 +7,7 @@ namespace BBB.Main.Repositories
     {
         public IList<User> GetAllUser();
         public User FindByName(string userName);
+        public User FindByNameAndPassword(string userName, string password);
         public User FindById(int userId);
     }
 }
