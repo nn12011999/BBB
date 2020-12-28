@@ -23,12 +23,14 @@ namespace BBB.Main.Controllers
         private readonly ICategoryRepository _categoryRepository;
         private readonly ITagRepository _tagRepository;
         private readonly IFileSaveServices _fileSaveServices;
+        private readonly IFileSaveRepository _fileSaveRepository;
         public PostController(IPostRepository PostRepository,
             IPostServices PostServices,
             IUserRepository userRepository,
             ICategoryRepository categoryRepository,
             ITagRepository tagRepository,
-            IFileSaveServices fileSaveServices)
+            IFileSaveServices fileSaveServices,
+            IFileSaveRepository fileSaveRepository)
         {
             _postRepository = PostRepository;
             _postServices = PostServices;
@@ -36,6 +38,7 @@ namespace BBB.Main.Controllers
             _categoryRepository = categoryRepository;
             _tagRepository = tagRepository;
             _fileSaveServices = fileSaveServices;
+            _fileSaveRepository = fileSaveRepository;
         }
 
         [HttpGet("get-all")]
@@ -300,6 +303,11 @@ namespace BBB.Main.Controllers
                         f.FileType = file.ContentType;
                         f.FileData = ms.ToArray();
                         response = await _fileSaveServices.AddFileSave(f);
+                        if(response != "OK")
+                        {
+                            return BadRequest("Type format is not a video. Plz contact admin");
+                        }
+                        response = f.Id.ToString();
                     }
                 }
                 else
@@ -313,6 +321,17 @@ namespace BBB.Main.Controllers
             }
 
             return Ok();
+        }
+
+        [HttpGet("get-video")]
+        public ActionResult GetVideoById(int Id)
+        {
+            var response = _fileSaveRepository.GetById(Id);
+            if(response == null)
+            {
+                return BadRequest("Video not found");
+            }
+            return File(response.FileData,response.FileType);
         }
     }
 }
