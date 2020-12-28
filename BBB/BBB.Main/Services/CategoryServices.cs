@@ -20,7 +20,11 @@ namespace BBB.Main.Services
             try 
             {
                 _context.Categories.Add(category);
-                var respone = _context.SaveChanges();
+                var response = _context.SaveChanges();
+                if (response < 1)
+                {
+                    return "Cannot execute. Plz contact Admin";
+                }
                 return "OK";
             }
             catch(Exception ex)
@@ -35,7 +39,11 @@ namespace BBB.Main.Services
             {
                 _context.Categories.Attach(category);
                 _context.Categories.Remove(category);
-                var respone = _context.SaveChanges();
+                var response = _context.SaveChanges();
+                if (response < 1)
+                {
+                    return "Cannot execute. Plz contact Admin";
+                }
                 return "OK";
             }
             catch (Exception ex)
@@ -49,7 +57,11 @@ namespace BBB.Main.Services
             try
             {
                 _context.Categories.Update(category);
-                var respone = _context.SaveChanges();
+                var response = _context.SaveChanges();
+                if (response < 1)
+                {
+                    return "Cannot execute. Plz contact Admin";
+                }
                 return "OK";
             }
             catch (Exception ex)

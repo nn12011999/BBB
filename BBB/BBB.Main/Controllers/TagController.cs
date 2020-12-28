@@ -65,8 +65,12 @@ namespace BBB.Main.Controllers
                 Url = request.Url
             };
 
-            var respone = _tagServices.AddTag(tag);
-            return Ok(respone);
+            var response = _tagServices.AddTag(tag);
+            if (response != "OK")
+            {
+                return BadRequest("Can not execute. Plz contact admin");
+            }
+            return Ok(response);
         }
 
         [HttpPost("delete-tag")]
@@ -100,8 +104,12 @@ namespace BBB.Main.Controllers
                 });
             }
 
-            var respone = _tagServices.DeleteTag(tag);
-            return Ok(respone);
+            var response = _tagServices.DeleteTag(tag);
+            if (response != "OK")
+            {
+                return BadRequest("Can not execute. Plz contact admin");
+            }
+            return Ok(response);
         }
 
         [HttpPost("update-tag")]
@@ -138,8 +146,23 @@ namespace BBB.Main.Controllers
             tag.Name = request.TagName;
             tag.Url = request.Url;
 
-            var respone = _tagServices.UpdateTag(tag);
-            return Ok(respone);
+            var response = _tagServices.UpdateTag(tag);
+            if (response != "OK")
+            {
+                return BadRequest("Can not execute. Plz contact admin");
+            }
+            return Ok(response);
+        }
+
+        [HttpGet("get-by-id")]
+        public IActionResult GetTagById([FromBody] int Id)
+        {
+            var response = _tagRepository.FindById(Id);
+            if (response == null)
+            {
+                return BadRequest("Tag not found");
+            }
+            return Ok(response);
         }
     }
 }

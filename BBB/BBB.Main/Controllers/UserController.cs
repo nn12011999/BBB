@@ -15,19 +15,19 @@ namespace BBB.Main.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly IUserRepository _UserRepository;
-        private readonly IUserServices _UserServices;
+        private readonly IUserRepository _userRepository;
+        private readonly IUserServices _userServices;
         public UserController(IUserRepository UserRepository,
             IUserServices UserServices)
         {
-            _UserRepository = UserRepository;
-            _UserServices = UserServices;
+            _userRepository = UserRepository;
+            _userServices = UserServices;
         }
 
         [HttpGet("get-all")]
         public IActionResult GetAllUser()
         {
-            return Ok(_UserRepository.GetAllUser());
+            return Ok(_userRepository.GetAllUser());
         }
 
         [HttpPost("add-user")]
@@ -43,7 +43,7 @@ namespace BBB.Main.Controllers
             }
 
 
-            var UserQuery = _UserRepository.FindByName(request.UserName);
+            var UserQuery = _userRepository.FindByName(request.UserName);
             if (UserQuery != null)
             {
                 return BadRequest(new ErrorViewModel
@@ -59,8 +59,12 @@ namespace BBB.Main.Controllers
                 Role = request.Role
             };
 
-            var respone = _UserServices.AddUser(User);
-            return Ok(respone);
+            var response = _userServices.AddUser(User);
+            if (response != "OK")
+            {
+                return BadRequest("Can not execute. Plz contact admin");
+            }
+            return Ok(response);
         }
 
         [HttpPost("delete-user")]
@@ -84,7 +88,7 @@ namespace BBB.Main.Controllers
                 });
             }
 
-            var User = _UserRepository.FindById(request.UserId);
+            var User = _userRepository.FindById(request.UserId);
             if (User == null)
             {
                 return BadRequest(new ErrorViewModel
@@ -94,8 +98,12 @@ namespace BBB.Main.Controllers
                 });
             }
 
-            var respone = _UserServices.DeleteUser(User);
-            return Ok(respone);
+            var response = _userServices.DeleteUser(User);
+            if (response != "OK")
+            {
+                return BadRequest("Can not execute. Plz contact admin");
+            }
+            return Ok(response);
         }
 
         [HttpPost("update-user")]
@@ -119,7 +127,7 @@ namespace BBB.Main.Controllers
                 });
             }
 
-            var User = _UserRepository.FindById(request.UserId);
+            var User = _userRepository.FindById(request.UserId);
             if (User == null)
             {
                 return BadRequest(new ErrorViewModel
@@ -132,8 +140,23 @@ namespace BBB.Main.Controllers
             User.UserName = request.UserName;
             User.Role = request.Role;
 
-            var respone = _UserServices.UpdateUser(User);
-            return Ok(respone);
+            var response = _userServices.UpdateUser(User);
+            if (response != "OK")
+            {
+                return BadRequest("Can not execute. Plz contact admin");
+            }
+            return Ok(response);
+        }
+
+        [HttpGet("get-by-id")]
+        public IActionResult GetUserById([FromBody] int Id)
+        {
+            var response = _userRepository.FindById(Id);
+            if (response == null)
+            {
+                return BadRequest("User not found");
+            }
+            return Ok(response);
         }
     }
 }

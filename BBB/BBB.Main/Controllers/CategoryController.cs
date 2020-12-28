@@ -64,8 +64,12 @@ namespace BBB.Main.Controllers
                 Slug = request.Slug
             };
 
-            var respone = _categoryServices.AddCategory(category);
-            return Ok(respone);
+            var response = _categoryServices.AddCategory(category);
+            if (response != "OK")
+            {
+                return BadRequest("Can not execute. Plz contact admin");
+            }
+            return Ok(response);
         }
 
         [HttpPost("delete-category")]
@@ -99,8 +103,12 @@ namespace BBB.Main.Controllers
                 });
             }
 
-            var respone = _categoryServices.DeleteCategory(category);
-            return Ok(respone);
+            var response = _categoryServices.DeleteCategory(category);
+            if (response != "OK")
+            {
+                return BadRequest("Can not execute. Plz contact admin");
+            }
+            return Ok(response);
         }
 
         [HttpPost("update-category")]
@@ -151,8 +159,23 @@ namespace BBB.Main.Controllers
             category.Name = request.CategoryName;
             category.Slug = request.Slug;
 
-            var respone = _categoryServices.UpdateCategory(category);
-            return Ok(respone);
+            var response = _categoryServices.UpdateCategory(category);
+            if (response != "OK")
+            {
+                return BadRequest("Can not execute. Plz contact admin");
+            }
+            return Ok(response);
+        }
+
+        [HttpGet("get-by-id")]
+        public IActionResult GetCategoryById([FromBody] int Id)
+        {
+            var response = _categoryRepository.FindById(Id);
+            if (response == null)
+            {
+                return BadRequest("Category not found");
+            }    
+            return Ok(response);
         }
     }
 }

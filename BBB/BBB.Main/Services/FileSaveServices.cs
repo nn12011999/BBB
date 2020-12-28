@@ -1,44 +1,41 @@
 ﻿using BBB.Data;
 using BBB.Data.Entities;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace BBB.Main.Services
 {
-    public class UserServices : IUserServices
+    public class FileSaveServices : IFileSaveServices
     {
         private ApplicationDbContext _context;
-        public UserServices(ApplicationDbContext context)
+        public FileSaveServices(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        public string AddUser(User User)
+        public async Task<string> AddFileSave(FileSave fileSave)
         {
-            try 
+            try
             {
-                _context.Users.Add(User);
-                var response = _context.SaveChanges();
+                _context.FileSaves.Add(fileSave);
+                var response = await _context.SaveChangesAsync();
                 if (response < 1)
                 {
                     return "Cannot execute. Plz contact Admin";
                 }
                 return "OK";
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return ex.Message.ToString();
             }
         }
-
-        public string DeleteUser(User User)
+        public string DeleteFileSave(FileSave fileSave)
         {
             try
             {
-                _context.Users.Attach(User);
-                _context.Users.Remove(User);
+                _context.FileSaves.Attach(fileSave);
+                _context.FileSaves.Remove(fileSave);
                 var response = _context.SaveChanges();
                 if (response < 1)
                 {
@@ -52,12 +49,12 @@ namespace BBB.Main.Services
             }
         }
 
-        public string UpdateUser(User User)
+        public async Task<string> UpdateCategory(FileSave fileSave)
         {
             try
             {
-                _context.Users.Update(User);
-                var response = _context.SaveChanges();
+                _context.FileSaves.Update(fileSave);
+                var response = await _context.SaveChangesAsync();
                 if (response < 1)
                 {
                     return "Cannot execute. Plz contact Admin";

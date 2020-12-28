@@ -3,9 +3,11 @@ using BBB.Data.DataModel.Response;
 using BBB.Data.Entities;
 using BBB.Main.Repositories;
 using BBB.Main.Services;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -15,28 +17,31 @@ namespace BBB.Main.Controllers
     [ApiController]
     public class PostController : ControllerBase
     {
-        private readonly IPostRepository _PostRepository;
+        private readonly IPostRepository _postRepository;
         private readonly IUserRepository _userRepository;
-        private readonly IPostServices _PostServices;
+        private readonly IPostServices _postServices;
         private readonly ICategoryRepository _categoryRepository;
         private readonly ITagRepository _tagRepository;
+        private readonly IFileSaveServices _fileSaveServices;
         public PostController(IPostRepository PostRepository,
             IPostServices PostServices,
             IUserRepository userRepository,
             ICategoryRepository categoryRepository,
-            ITagRepository tagRepository)
+            ITagRepository tagRepository,
+            IFileSaveServices fileSaveServices)
         {
-            _PostRepository = PostRepository;
-            _PostServices = PostServices;
+            _postRepository = PostRepository;
+            _postServices = PostServices;
             _userRepository = userRepository;
             _categoryRepository = categoryRepository;
             _tagRepository = tagRepository;
+            _fileSaveServices = fileSaveServices;
         }
 
         [HttpGet("get-all")]
         public IActionResult GetAllPost()
         {
-            return Ok(_PostRepository.GetAllPost());
+            return Ok(_postRepository.GetAllPost());
         }
 
         [HttpPost("add-post")]
@@ -52,7 +57,7 @@ namespace BBB.Main.Controllers
             }
 
 
-            var PostQuery = _PostRepository.FindByTitle(request.Title);
+            var PostQuery = _postRepository.FindByTitle(request.Title);
             if (PostQuery != null)
             {
                 return BadRequest(new ErrorViewModel
@@ -123,8 +128,12 @@ namespace BBB.Main.Controllers
                 UserId = request.UserId
             };
 
-            var respone = _PostServices.AddPost(Post);
-            return Ok(respone);
+            var response = _postServices.AddPost(Post);
+            if (response != "OK")
+            {
+                return BadRequest("Can not execute. Plz contact admin");
+            }    
+            return Ok(response);
         }
 
         [HttpPost("delete-Post")]
@@ -148,7 +157,7 @@ namespace BBB.Main.Controllers
                 });
             }
 
-            var Post = _PostRepository.FindById(request.PostId);
+            var Post = _postRepository.FindById(request.PostId);
             if (Post == null)
             {
                 return BadRequest(new ErrorViewModel
@@ -158,8 +167,12 @@ namespace BBB.Main.Controllers
                 });
             }
 
-            var respone = _PostServices.DeletePost(Post);
-            return Ok(respone);
+            var response = _postServices.DeletePost(Post);
+            if (response != "OK")
+            {
+                return BadRequest("Can not execute. Plz contact admin");
+            }
+            return Ok(response);
         }
 
         [HttpPost("update-Post")]
@@ -183,7 +196,7 @@ namespace BBB.Main.Controllers
                 });
             }
 
-            var Post = _PostRepository.FindById(request.PostId);
+            var Post = _postRepository.FindById(request.PostId);
             if (Post == null)
             {
                 return BadRequest(new ErrorViewModel
@@ -251,8 +264,55 @@ namespace BBB.Main.Controllers
             Post.CategoryId = request.CategoryId;
             Post.UserId = request.UserId;
 
-            var respone = _PostServices.UpdatePost(Post);
-            return Ok(respone);
+            var response = _postServices.UpdatePost(Post);
+            if (response != "OK")
+            {
+                return BadRequest("Can not execute. Plz contact admin");
+            }
+            return Ok(response);
+        }
+
+        [HttpGet("get-by-id")]
+        public IActionResult GetPostById([FromBody] int Id)
+        {
+            var response = _postRepository.FindById(Id);
+            if (response == null)
+            {
+                return BadRequest("Post not found");
+            }
+            return Ok(response);
+        }
+
+        [HttpPost("upload")]
+        public async Task<IActionResult> OnPostUploadAsync([FromForm] IFormFile file)
+        {
+            string response = "";
+            try
+            {
+                if (file.Length > 0 && file.ContentType.Contains("video"))
+                {
+
+                    using (var ms = new MemoryStream())
+                    {
+                        FileSave f = new FileSave();
+                        file.CopyTo(ms);
+                        f.FileName = file.FileName;
+                        f.FileType = file.ContentType;
+                        f.FileData = ms.ToArray();
+                        response = await _fileSaveServices.AddFileSave(f);
+                    }
+                }
+                else
+                { 
+                    return BadRequest("Type format is not a video. Plz contact admin"); 
+                }
+            }
+            catch
+            {
+                return BadRequest("Can not upload. Plz contact admin");
+            }
+
+            return Ok();
         }
     }
 }

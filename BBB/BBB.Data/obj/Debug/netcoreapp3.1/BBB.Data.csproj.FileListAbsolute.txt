@@ -18,7 +18,6 @@ C:\Users\Admin\Desktop\BBB\BBB\BBB.Data\bin\Debug\netcoreapp3.1\BBB.Data.pdb
 C:\Users\Admin\Desktop\BBB\BBB\BBB.Data\obj\Debug\netcoreapp3.1\BBB.Data.csprojAssemblyReference.cache
 C:\Users\Admin\Desktop\BBB\BBB\BBB.Data\obj\Debug\netcoreapp3.1\BBB.Data.AssemblyInfoInputs.cache
 C:\Users\Admin\Desktop\BBB\BBB\BBB.Data\obj\Debug\netcoreapp3.1\BBB.Data.AssemblyInfo.cs
-C:\Users\Admin\Desktop\BBB\BBB\BBB.Data\obj\Debug\netcoreapp3.1\BBB.Data.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Desktop\BBB\BBB\BBB.Data\obj\Debug\netcoreapp3.1\BBB.Data.dll
 C:\Users\Admin\Desktop\BBB\BBB\BBB.Data\obj\Debug\netcoreapp3.1\BBB.Data.pdb
 C:\Users\Admin\Desktop\BBB\BBB\BBB.Data\obj\Debug\netcoreapp3.1\BBB.Data.genruntimeconfig.cache
@@ -46,3 +45,4 @@ C:\Users\T520\Desktop\BBB\BBB\BBB\BBB.Data\obj\Debug\netcoreapp3.1\BBB.Data.cspr
 C:\Users\T520\Desktop\BBB\BBB\BBB\BBB.Data\obj\Debug\netcoreapp3.1\BBB.Data.dll
 C:\Users\T520\Desktop\BBB\BBB\BBB\BBB.Data\obj\Debug\netcoreapp3.1\BBB.Data.pdb
 C:\Users\T520\Desktop\BBB\BBB\BBB\BBB.Data\obj\Debug\netcoreapp3.1\BBB.Data.genruntimeconfig.cache
+C:\Users\Admin\Desktop\BBB\BBB\BBB.Data\obj\Debug\netcoreapp3.1\BBB.Data.csproj.CoreCompileInputs.cache
