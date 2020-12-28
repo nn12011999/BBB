@@ -25,6 +25,13 @@ namespace BBB.Main.Services
                 {
                     return "Cannot execute. Plz contact Admin";
                 }
+                category.Slug = category.Name.Replace(" ", "-") + "-" + category.Id;
+                _context.Categories.Update(category);
+                response = _context.SaveChanges();
+                if (response < 1)
+                {
+                    return "Cannot execute. Plz contact Admin";
+                }
                 return "OK";
             }
             catch(Exception ex)
