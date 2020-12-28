@@ -5,6 +5,8 @@ using BBB.Main.Repositories;
 using BBB.Main.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace BBB.Main.Controllers
 {
@@ -24,7 +26,19 @@ namespace BBB.Main.Controllers
         [HttpGet("get-all")]
         public IActionResult GetAllCategory()
         {
-            return Ok(_categoryRepository.GetAllCategory());
+            var response = _categoryRepository.GetAllCategory();
+            if(response == null)
+            {
+                BadRequest("Can not get category");
+            };
+            foreach(var item in response)
+            {
+                if (item !=null && item.ParentCategory!=null)
+                {
+                    item.ParentCategory.ParentCategory = null;
+                }    
+            }    
+            return Ok(response);
         }
 
         [HttpPost("add-category")]
