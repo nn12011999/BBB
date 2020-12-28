@@ -23,5 +23,9 @@ namespace BBB.Main.Repositories
         {
             return  _context.FileSaves.Find(Id);
         }
+        public FileSave GetByUrl(string url)
+        {
+            return _context.FileSaves.Where(x=> x.Url == url).FirstOrDefault();
+        }
     }
 }

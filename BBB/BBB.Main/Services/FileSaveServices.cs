@@ -23,6 +23,13 @@ namespace BBB.Main.Services
                 {
                     return "Cannot execute. Plz contact Admin";
                 }
+                fileSave.Url = fileSave.FileName.Replace(" ", "-") + "-" + fileSave.Id;
+                _context.FileSaves.Update(fileSave);
+                response = await _context.SaveChangesAsync();
+                if (response < 1)
+                {
+                    return "Cannot execute. Plz contact Admin";
+                }
                 return "OK";
             }
             catch (Exception ex)
@@ -53,6 +60,7 @@ namespace BBB.Main.Services
         {
             try
             {
+                fileSave.Url = fileSave.FileName.Replace(" ", "-") + "-" + fileSave.Id;
                 _context.FileSaves.Update(fileSave);
                 var response = await _context.SaveChangesAsync();
                 if (response < 1)

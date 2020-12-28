@@ -30,5 +30,10 @@ namespace BBB.Main.Repositories
         {
             return _context.Categories.ToList();
         }
+
+        public Category FindByUrl(string url)
+        {
+            return _context.Categories.Where(x => x.Slug == url).FirstOrDefault();
+        }
     }
 }

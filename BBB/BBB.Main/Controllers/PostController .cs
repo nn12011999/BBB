@@ -286,6 +286,17 @@ namespace BBB.Main.Controllers
             return Ok(response);
         }
 
+        [HttpGet("get-by-url")]
+        public IActionResult GetPostByUrl([FromBody] string Url)
+        {
+            var response = _postRepository.FindByUrl(Url);
+            if (response == null)
+            {
+                return BadRequest("Post not found");
+            }
+            return Ok(response);
+        }
+
         [HttpPost("upload")]
         public async Task<IActionResult> OnPostUploadAsync([FromForm] IFormFile file)
         {
@@ -323,7 +334,7 @@ namespace BBB.Main.Controllers
             return Ok();
         }
 
-        [HttpGet("get-video")]
+        [HttpGet("get-video-by-id")]
         public ActionResult GetVideoById(int Id)
         {
             var response = _fileSaveRepository.GetById(Id);
@@ -332,6 +343,17 @@ namespace BBB.Main.Controllers
                 return BadRequest("Video not found");
             }
             return File(response.FileData,response.FileType);
+        }
+
+        [HttpGet("get-video-by-url")]
+        public ActionResult GetVideoByUrl(string Url)
+        {
+            var response = _fileSaveRepository.GetByUrl(Url);
+            if (response == null)
+            {
+                return BadRequest("Video not found");
+            }
+            return File(response.FileData, response.FileType);
         }
     }
 }

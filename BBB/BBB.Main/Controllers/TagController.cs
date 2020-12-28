@@ -164,5 +164,16 @@ namespace BBB.Main.Controllers
             }
             return Ok(response);
         }
+
+        [HttpGet("get-by-url")]
+        public IActionResult GetTagByUrl([FromBody] string Url)
+        {
+            var response = _tagRepository.FindByUrl(Url);
+            if (response == null)
+            {
+                return BadRequest("Tag not found");
+            }
+            return Ok(response);
+        }
     }
 }

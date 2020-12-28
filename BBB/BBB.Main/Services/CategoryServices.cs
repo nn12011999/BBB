@@ -63,6 +63,7 @@ namespace BBB.Main.Services
         {
             try
             {
+                category.Slug = category.Name.Replace(" ", "-") + "-" + category.Id;
                 _context.Categories.Update(category);
                 var response = _context.SaveChanges();
                 if (response < 1)

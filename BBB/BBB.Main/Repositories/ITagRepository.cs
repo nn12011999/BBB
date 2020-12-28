@@ -7,6 +7,7 @@ namespace BBB.Main.Repositories
     {
         public IList<Tag> GetAllTag();
         public Tag FindByName(string tagName);
+        public Tag FindByUrl(string url);
         public Tag FindById(int tagId);
     }
 }

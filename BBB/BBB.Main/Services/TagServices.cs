@@ -25,6 +25,13 @@ namespace BBB.Main.Services
                 {
                     return "Cannot execute. Plz contact Admin";
                 }
+                tag.Url = tag.Name.Replace(" ", "-") + "-" + tag.Id;
+                _context.Tags.Update(tag);
+                response = _context.SaveChanges();
+                if (response < 1)
+                {
+                    return "Cannot execute. Plz contact Admin";
+                }
                 return "OK";
             }
             catch(Exception ex)
@@ -56,6 +63,7 @@ namespace BBB.Main.Services
         {
             try
             {
+                tag.Url = tag.Name.Replace(" ", "-") + "-" + tag.Id;
                 _context.Tags.Update(tag);
                 var response = _context.SaveChanges();
                 if (response < 1)

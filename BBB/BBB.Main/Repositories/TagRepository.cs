@@ -26,6 +26,11 @@ namespace BBB.Main.Repositories
             return _context.Tags.Where(x => x.Name == tagName).FirstOrDefault() ;
         }
 
+        public Tag FindByUrl(string url)
+        {
+            return _context.Tags.Where(x => x.Url == url).FirstOrDefault();
+        }
+
         public IList<Tag> GetAllTag()
         {
             return _context.Tags.ToList();

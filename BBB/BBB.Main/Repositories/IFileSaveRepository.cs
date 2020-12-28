@@ -8,5 +8,6 @@ namespace BBB.Main.Repositories
     {
         public IList<FileSave> GetAll();
         public FileSave GetById(int Id);
+        public FileSave GetByUrl(string url);
     }
 }

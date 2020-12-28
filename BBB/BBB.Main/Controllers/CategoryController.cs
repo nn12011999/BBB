@@ -177,5 +177,16 @@ namespace BBB.Main.Controllers
             }    
             return Ok(response);
         }
+
+        [HttpGet("get-by-url")]
+        public IActionResult GetCategoryByUrl([FromBody] string Url)
+        {
+            var response = _categoryRepository.FindByUrl(Url);
+            if (response == null)
+            {
+                return BadRequest("Category not found");
+            }
+            return Ok(response);
+        }
     }
 }

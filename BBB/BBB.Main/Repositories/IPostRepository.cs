@@ -7,6 +7,7 @@ namespace BBB.Main.Repositories
     {
         public IList<Post> GetAllPost();
         public Post FindByTitle(string PostTitle);
+        public Post FindByUrl(string url);
         public Post FindById(int PostId);
     }
 }

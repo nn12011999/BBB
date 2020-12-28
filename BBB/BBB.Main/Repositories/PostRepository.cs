@@ -27,6 +27,11 @@ namespace BBB.Main.Repositories
             return _context.Posts.Where(x => x.Title == PostTitle).FirstOrDefault();
         }
 
+        public Post FindByUrl(string url)
+        {
+            return _context.Posts.Where(x => x.Url == url).FirstOrDefault();
+        }
+
         public IList<Post> GetAllPost()
         {
             var query = _context.Posts.Include(x=>x.Tags).ToList();
