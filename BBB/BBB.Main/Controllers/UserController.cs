@@ -151,9 +151,9 @@ namespace BBB.Main.Controllers
 
         [HttpPost("get-by-id")]
         //[Authorize(AuthenticationSchemes = "Bearer", Roles = RoleDefine.Admin)]
-        public IActionResult GetUserById([FromBody] RequestByUserId request)
+        public IActionResult GetUserById([FromBody] RequestById request)
         {
-            var response = _userRepository.FindById(request.UserId);
+            var response = _userRepository.FindById(request.Id);
             if (response == null)
             {
                 return BadRequest("User not found");

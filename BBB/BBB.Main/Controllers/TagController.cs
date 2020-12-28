@@ -155,9 +155,9 @@ namespace BBB.Main.Controllers
         }
 
         [HttpGet("get-by-id")]
-        public IActionResult GetTagById([FromBody] int Id)
+        public IActionResult GetTagById([FromBody] RequestById request)
         {
-            var response = _tagRepository.FindById(Id);
+            var response = _tagRepository.FindById(request.Id);
             if (response == null)
             {
                 return BadRequest("Tag not found");
@@ -166,9 +166,9 @@ namespace BBB.Main.Controllers
         }
 
         [HttpGet("get-by-url")]
-        public IActionResult GetTagByUrl([FromBody] string Url)
+        public IActionResult GetTagByUrl([FromBody] RequestByUrl request)
         {
-            var response = _tagRepository.FindByUrl(Url);
+            var response = _tagRepository.FindByUrl(request.Url);
             if (response == null)
             {
                 return BadRequest("Tag not found");

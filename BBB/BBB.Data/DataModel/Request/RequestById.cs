@@ -4,8 +4,8 @@ using System.Text;
 
 namespace BBB.Data.DataModel.Request
 {
-    public class RequestByUserId
+    public class RequestById
     {
-        public int UserId { get; set; }
+        public int Id { get; set; }
     }
 }

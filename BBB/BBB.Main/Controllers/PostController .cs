@@ -276,9 +276,9 @@ namespace BBB.Main.Controllers
         }
 
         [HttpGet("get-by-id")]
-        public IActionResult GetPostById([FromBody] int Id)
+        public IActionResult GetPostById([FromBody] RequestById request)
         {
-            var response = _postRepository.FindById(Id);
+            var response = _postRepository.FindById(request.Id);
             if (response == null)
             {
                 return BadRequest("Post not found");
@@ -287,9 +287,9 @@ namespace BBB.Main.Controllers
         }
 
         [HttpGet("get-by-url")]
-        public IActionResult GetPostByUrl([FromBody] string Url)
+        public IActionResult GetPostByUrl([FromBody] RequestByUrl request)
         {
-            var response = _postRepository.FindByUrl(Url);
+            var response = _postRepository.FindByUrl(request.Url);
             if (response == null)
             {
                 return BadRequest("Post not found");
@@ -335,9 +335,9 @@ namespace BBB.Main.Controllers
         }
 
         [HttpGet("get-video-by-id")]
-        public ActionResult GetVideoById(int Id)
+        public ActionResult GetVideoById([FromBody] RequestById request)
         {
-            var response = _fileSaveRepository.GetById(Id);
+            var response = _fileSaveRepository.GetById(request.Id);
             if(response == null)
             {
                 return BadRequest("Video not found");
@@ -346,9 +346,9 @@ namespace BBB.Main.Controllers
         }
 
         [HttpGet("get-video-by-url")]
-        public ActionResult GetVideoByUrl(string Url)
+        public ActionResult GetVideoByUrl([FromBody] RequestByUrl request)
         {
-            var response = _fileSaveRepository.GetByUrl(Url);
+            var response = _fileSaveRepository.GetByUrl(request.Url);
             if (response == null)
             {
                 return BadRequest("Video not found");
