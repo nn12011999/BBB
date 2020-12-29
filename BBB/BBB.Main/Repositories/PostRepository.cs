@@ -41,5 +41,19 @@ namespace BBB.Main.Repositories
             }
             return query;
         }
+        public IList<Post> GetByCategoryId(int Id)
+        {
+            var query = _context.Posts
+                .Include(x => x.Category)
+                .Include(x => x.Tags)
+                .Where(x=>x.Category.Id == Id)
+                .ToList();
+            foreach (var q in query)
+            {
+                if (q.Category.ParentCategory != null)
+                    q.Category.ParentCategory = null;
+            }    
+            return query;
+        }
     }
 }
