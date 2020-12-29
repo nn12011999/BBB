@@ -276,9 +276,9 @@ namespace BBB.Main.Controllers
         }
 
         [HttpGet("get-by-id")]
-        public IActionResult GetPostById([FromBody] RequestById request)
+        public IActionResult GetPostById(int Id)
         {
-            var response = _postRepository.FindById(request.Id);
+            var response = _postRepository.FindById(Id);
             if (response == null)
             {
                 return BadRequest("Post not found");

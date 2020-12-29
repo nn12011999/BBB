@@ -46,3 +46,15 @@ C:\Users\T520\Desktop\BBB\BBB\BBB\BBB.Data\obj\Debug\netcoreapp3.1\BBB.Data.dll
 C:\Users\T520\Desktop\BBB\BBB\BBB\BBB.Data\obj\Debug\netcoreapp3.1\BBB.Data.pdb
 C:\Users\T520\Desktop\BBB\BBB\BBB\BBB.Data\obj\Debug\netcoreapp3.1\BBB.Data.genruntimeconfig.cache
 C:\Users\Admin\Desktop\BBB\BBB\BBB.Data\obj\Debug\netcoreapp3.1\BBB.Data.csproj.CoreCompileInputs.cache
+C:\Rin\IT\Web\BBB\BBB\BBB.Data\bin\Debug\netcoreapp3.1\BBB.Data.deps.json
+C:\Rin\IT\Web\BBB\BBB\BBB.Data\bin\Debug\netcoreapp3.1\BBB.Data.runtimeconfig.json
+C:\Rin\IT\Web\BBB\BBB\BBB.Data\bin\Debug\netcoreapp3.1\BBB.Data.runtimeconfig.dev.json
+C:\Rin\IT\Web\BBB\BBB\BBB.Data\bin\Debug\netcoreapp3.1\BBB.Data.dll
+C:\Rin\IT\Web\BBB\BBB\BBB.Data\bin\Debug\netcoreapp3.1\BBB.Data.pdb
+C:\Rin\IT\Web\BBB\BBB\BBB.Data\obj\Debug\netcoreapp3.1\BBB.Data.csprojAssemblyReference.cache
+C:\Rin\IT\Web\BBB\BBB\BBB.Data\obj\Debug\netcoreapp3.1\BBB.Data.AssemblyInfoInputs.cache
+C:\Rin\IT\Web\BBB\BBB\BBB.Data\obj\Debug\netcoreapp3.1\BBB.Data.AssemblyInfo.cs
+C:\Rin\IT\Web\BBB\BBB\BBB.Data\obj\Debug\netcoreapp3.1\BBB.Data.csproj.CoreCompileInputs.cache
+C:\Rin\IT\Web\BBB\BBB\BBB.Data\obj\Debug\netcoreapp3.1\BBB.Data.dll
+C:\Rin\IT\Web\BBB\BBB\BBB.Data\obj\Debug\netcoreapp3.1\BBB.Data.pdb
+C:\Rin\IT\Web\BBB\BBB\BBB.Data\obj\Debug\netcoreapp3.1\BBB.Data.genruntimeconfig.cache

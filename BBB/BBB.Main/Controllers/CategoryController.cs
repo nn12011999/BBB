@@ -186,9 +186,9 @@ namespace BBB.Main.Controllers
         }
 
         [HttpGet("get-by-id")]
-        public IActionResult GetCategoryById([FromBody] RequestById request)
+        public IActionResult GetCategoryById(int Id)
         {
-            var response = _categoryRepository.FindById(request.Id);
+            var response = _categoryRepository.FindById(Id);
             if (response == null)
             {
                 return BadRequest("Category not found");
