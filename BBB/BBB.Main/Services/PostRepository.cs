@@ -59,12 +59,15 @@ namespace BBB.Main.Services
             }
         }
 
-        public string UpdatePost(Post Post)
+        public string UpdatePost(Post Post,List<Tag> tags)
         {
             try
             {
-                Post.Url = Post.Title.Replace(" ", "-") + "-" + Post.Id;
-                _context.Posts.Update(Post);
+                var temp = Post;
+                temp.Url = temp.Title.Replace(" ", "-") + "-" + Post.Id;
+                temp.Tags = tags;
+                _context.Posts.Attach(Post);
+                _context.Posts.Remove(Post);
                 var response = _context.SaveChanges();
                 if (response < 1)
                 {

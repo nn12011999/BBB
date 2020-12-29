@@ -259,7 +259,6 @@ namespace BBB.Main.Controllers
                 }
             }
 
-            Post.Tags = tags;
             Post.Title = request.Title;
             Post.Context = request.Context;
             Post.Url = request.Url;
@@ -267,7 +266,7 @@ namespace BBB.Main.Controllers
             Post.CategoryId = request.CategoryId;
             Post.UserId = request.UserId;
 
-            var response = _postServices.UpdatePost(Post);
+            var response = _postServices.UpdatePost(Post,tags);
             if (response != "OK")
             {
                 return BadRequest("Can not execute. Plz contact admin");
